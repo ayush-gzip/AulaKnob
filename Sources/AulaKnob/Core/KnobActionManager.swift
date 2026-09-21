@@ -67,22 +67,22 @@ public final class KnobActionManager {
             if effectiveDirection > 0 {
                 // Next Space: Ctrl + Right Arrow
                 simulateKey(keyCode: CGKeyCode(kVK_RightArrow), flags: .maskControl)
-                KnobHUDController.shared.show(title: "Desktop Spaces", detail: "Next Space →", iconName: "arrow.right.to.line.compact", mode: .spaces)
+                KnobHUDController.shared.show(title: "Desktop Spaces", detail: "Next Space", iconName: "arrow.right.to.line.compact", mode: .spaces)
             } else {
                 // Prev Space: Ctrl + Left Arrow
                 simulateKey(keyCode: CGKeyCode(kVK_LeftArrow), flags: .maskControl)
-                KnobHUDController.shared.show(title: "Desktop Spaces", detail: "← Previous Space", iconName: "arrow.left.to.line.compact", mode: .spaces)
+                KnobHUDController.shared.show(title: "Desktop Spaces", detail: "Previous Space", iconName: "arrow.left.to.line.compact", mode: .spaces)
             }
             
         case .tabs:
             if effectiveDirection > 0 {
                 // Next Tab: Cmd + Shift + ] (or Cmd + Option + Right)
                 simulateKey(keyCode: CGKeyCode(kVK_ANSI_RightBracket), flags: [.maskCommand, .maskShift])
-                KnobHUDController.shared.show(title: "Tabs", detail: "Next Tab ⇥", iconName: "chevron.right.2", mode: .tabs)
+                KnobHUDController.shared.show(title: "Tabs", detail: "Next Tab", iconName: "chevron.right.2", mode: .tabs)
             } else {
                 // Previous Tab: Cmd + Shift + [ (or Cmd + Option + Left)
                 simulateKey(keyCode: CGKeyCode(kVK_ANSI_LeftBracket), flags: [.maskCommand, .maskShift])
-                KnobHUDController.shared.show(title: "Tabs", detail: "⇤ Previous Tab", iconName: "chevron.left.2", mode: .tabs)
+                KnobHUDController.shared.show(title: "Tabs", detail: "Previous Tab", iconName: "chevron.left.2", mode: .tabs)
             }
             
         case .scrub:

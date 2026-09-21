@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-echo "🔨 Building AulaKnob (Release)..."
+echo "Building AulaKnob (Release)..."
 swift build -c release
 
 APP_NAME="AulaKnob"
@@ -10,7 +10,7 @@ CONTENTS_DIR="${APP_BUNDLE}/Contents"
 MACOS_DIR="${CONTENTS_DIR}/MacOS"
 RESOURCES_DIR="${CONTENTS_DIR}/Resources"
 
-echo "📦 Creating App Bundle ${APP_BUNDLE}..."
+echo "Creating app bundle ${APP_BUNDLE}..."
 rm -rf "${APP_BUNDLE}"
 mkdir -p "${MACOS_DIR}"
 mkdir -p "${RESOURCES_DIR}"
@@ -63,7 +63,7 @@ cat << 'PLIST' > "${CONTENTS_DIR}/Info.plist"
 PLIST
 
 # Ad-hoc codesign
-echo "🔏 Signing App Bundle..."
+echo "Signing app bundle..."
 codesign --force --deep --sign - "${APP_BUNDLE}"
 
-echo "✅ Successfully built ${APP_BUNDLE} with custom icon!"
+echo "Built ${APP_BUNDLE}"

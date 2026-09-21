@@ -36,19 +36,6 @@ public enum KnobMode: String, CaseIterable, Codable {
         }
     }
     
-    public var menuIcon: String {
-        switch self {
-        case .volume: return "🔊"
-        case .brightness: return "☀️"
-        case .scroll: return "📜"
-        case .spaces: return "🪟"
-        case .tabs: return "📑"
-        case .scrub: return "⏩"
-        case .appSwitch: return "🔀"
-        case .passthrough: return "⌨️"
-        }
-    }
-    
     public var description: String {
         switch self {
         case .volume: return "Rotate: Volume ± | Click: Play/Pause | Double-click: Next track"

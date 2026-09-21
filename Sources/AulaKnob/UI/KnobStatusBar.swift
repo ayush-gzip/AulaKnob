@@ -62,7 +62,7 @@ public final class KnobStatusBar: NSObject {
         }
         menu.addItem(titleItem)
         
-        let statusStr = settings.isPaused ? "Status: ⏸️ Paused (Keys Untouched)" : "Active Mode: \(settings.activeMode.displayName)"
+        let statusStr = settings.isPaused ? "Status: Paused (Keys Untouched)" : "Active Mode: \(settings.activeMode.displayName)"
         let subTitle = NSMenuItem(title: statusStr, action: nil, keyEquivalent: "")
         subTitle.isEnabled = false
         menu.addItem(subTitle)
@@ -71,7 +71,7 @@ public final class KnobStatusBar: NSObject {
         
         // Pause / Resume Toggle
         let pauseItem = NSMenuItem(
-            title: settings.isPaused ? "▶️ Resume Knob Customization" : "⏸️ Pause Knob Customization",
+            title: settings.isPaused ? "Resume Knob Customization" : "Pause Knob Customization",
             action: #selector(togglePause),
             keyEquivalent: "p"
         )
@@ -87,7 +87,7 @@ public final class KnobStatusBar: NSObject {
         
         for mode in KnobMode.allCases {
             let item = NSMenuItem(
-                title: "\(mode.menuIcon)  \(mode.displayName)",
+                title: mode.displayName,
                 action: #selector(modeSelected(_:)),
                 keyEquivalent: ""
             )
@@ -265,7 +265,7 @@ public final class KnobStatusBar: NSObject {
         // Accessibility Permission Status
         let isTrusted = AccessibilityHelper.isAccessibilityGranted()
         let axItem = NSMenuItem(
-            title: isTrusted ? "✓ Accessibility: Enabled" : "⚠️ Grant Accessibility Permission...",
+            title: isTrusted ? "Accessibility: Enabled" : "Grant Accessibility Permission...",
             action: #selector(openAccessibility),
             keyEquivalent: ""
         )
