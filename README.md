@@ -9,9 +9,8 @@ icon and lives in the menu bar.
 
 ## Requirements
 
-- Apple Silicon Mac (arm64)
 - macOS 13 or later
-- An AULA F75, or another knob that sends volume and media keys
+- An AULA F75
 
 ## Install
 
