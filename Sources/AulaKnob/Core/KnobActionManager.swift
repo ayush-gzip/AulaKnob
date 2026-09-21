@@ -241,6 +241,20 @@ public final class KnobActionManager {
     }
     
     private func determineEffectiveMode(modifiers: NSEvent.ModifierFlags) -> KnobMode {
+        let hasModifier = modifiers.contains(.shift) || modifiers.contains(.control)
+            || modifiers.contains(.option) || modifiers.contains(.command)
+
+        // Require-modifier mode: bare turns and the F11/F12 volume keys stay on
+        // volume; holding any modifier while turning activates the mode picked in
+        // the menu. The knob and the F-keys send identical volume events, so this
+        // is what keeps the F-keys working while a mode like Tabs lives behind a
+        // modifier.
+        if settings.requireModifierForSpecialModes {
+            return hasModifier ? settings.activeMode : .volume
+        }
+
+        // Otherwise modifiers are instant shortcuts to specific modes, and a bare
+        // turn uses the active mode.
         if settings.modifierOverridesEnabled {
             if modifiers.contains(.shift) {
                 return .brightness
@@ -252,12 +266,7 @@ public final class KnobActionManager {
                 return .spaces
             }
         }
-        
-        if settings.requireModifierForSpecialModes {
-            // Bare turns / F11 / F12 only adjust volume unless a modifier key is held
-            return .volume
-        }
-        
+
         return settings.activeMode
     }
     

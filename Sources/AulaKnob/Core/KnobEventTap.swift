@@ -103,7 +103,7 @@ public final class KnobEventTap {
         let isKeyUp = ((keyFlags & 0xFF00) >> 8) == 0xB
         
         let modifierFlags = nsEvent.modifierFlags
-        
+
         switch keyCode {
         case 0: // NX_KEYTYPE_SOUND_UP (Rotate Clockwise)
             guard settings.interceptRotation else {

@@ -45,7 +45,7 @@ public final class KnobSettings: ObservableObject {
             Keys.isPaused: false,
             Keys.interceptMuteKey: true,
             Keys.interceptRotation: true,
-            Keys.requireModifierForSpecialModes: false
+            Keys.requireModifierForSpecialModes: true
         ])
     }
     
