@@ -30,8 +30,10 @@ icon and lives in the menu bar.
 
 ## Modes
 
-Rotate the knob to act on the current mode. Switch modes from the menu bar, or
-hold the knob to cycle through them.
+By default a bare turn adjusts volume, so the keyboard's F11 and F12 volume keys
+keep working. Hold any modifier (Command, Shift, Option, or Control) while
+turning to run the mode selected in the menu bar. Pick a mode from the menu bar,
+or hold the knob to cycle through them.
 
 | Mode | Rotate | Click |
 | --- | --- | --- |
@@ -53,14 +55,20 @@ hold the knob to cycle through them.
 
 Single, double, triple, and hold actions are all configurable from the menu bar.
 
-## Modifier shortcuts
+## Modifier and the volume keys
 
-Hold a modifier and rotate for an instant action without switching modes:
+The knob and the F11/F12 volume keys send the same media-key events, so the app
+cannot tell them apart. To keep the volume keys working, custom modes sit behind
+a modifier by default:
 
-- Shift: adjust display brightness
-- Option: smooth page scroll or zoom
-- Command: switch browser and editor tabs
-- Control: switch desktop spaces
+- Bare turn, and F11/F12: volume.
+- Hold any modifier and turn: the mode selected in the menu bar.
+
+To change this, use the menu bar: Function Keys and Interception, then untoggle
+"Protect F11/F12". With protection off, a bare turn runs the selected mode and
+each modifier jumps to a specific mode: Shift for brightness, Option for scroll,
+Command for tabs, Control for spaces. In this state the F11/F12 keys follow the
+knob mode.
 
 ## Menu bar controls
 
